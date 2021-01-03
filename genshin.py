@@ -23,7 +23,7 @@ class ConfMeta(type):
 
   @property
   def app_version(self):
-    return '2.1.0'
+    return '2.3.0'
 
   @property
   def ua(self):
@@ -127,7 +127,7 @@ class Sign(object):
     return (md5.hexdigest())
 
   def get_DS(self):
-    n = self.md5(Conf.app_version)
+    n = 'h8w582wxwgqvahcdkpvdhbh2w9casgfl'
     i = str(int(time.time()))
     r = ''.join(random.sample(string.ascii_lowercase + string.digits, 6))
     c = self.md5("salt=" + n + "&t="+ i + "&r=" + r)
